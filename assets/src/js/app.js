@@ -1,5 +1,6 @@
 var ko = require('knockout');
 var Alert = require('./modules/Alert'); // ここを追加
+require('../scss/style.scss'); // ここを追加
 
 var Todo = function(title, done, order,callback) {
     var self = this;

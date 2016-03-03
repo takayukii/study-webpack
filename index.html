@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>Webpack demo using Knockout.js</title>
+    <link rel=stylesheet href="assets/dist/css/style.css">
 </head>
 <body>
 
@@ -42,7 +43,8 @@
             <input class="edit" type="text" data-bind="value:title,event: { keyup: $root.editOnEnter}" />
         </li>
     </script>
-    
+
+    <script src="assets/dist/js/vendor.js"></script> <!-- 追加 -->    
     <script src="assets/dist/js/app.js"></script>
 
 </body>
