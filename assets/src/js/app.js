@@ -1,4 +1,5 @@
 var ko = require('knockout');
+var Alert = require('./modules/Alert'); // ここを追加
 
 var Todo = function(title, done, order,callback) {
     var self = this;
@@ -22,6 +23,10 @@ var viewModel = function(){
        var order = self.todos().length;
        var t = new Todo(self.inputTitle(),false,order,self.countUpdate);
        self.todos.push(t);
+
+       var alert = new Alert(self.inputTitle()); // 追加
+       alert.say(); // 追加
+
     };
     
     self.createOnEnter = function(item,event){

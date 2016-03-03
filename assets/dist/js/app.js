@@ -45,6 +45,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var ko = __webpack_require__(1);
+	var Alert = __webpack_require__(4); // ここを追加
 
 	var Todo = function(title, done, order,callback) {
 	    var self = this;
@@ -68,6 +69,10 @@
 	       var order = self.todos().length;
 	       var t = new Todo(self.inputTitle(),false,order,self.countUpdate);
 	       self.todos.push(t);
+
+	       var alert = new Alert(self.inputTitle()); // 追加
+	       alert.say(); // 追加
+
 	    };
 	    
 	    self.createOnEnter = function(item,event){
@@ -6023,6 +6028,21 @@
 /***/ function(module, exports) {
 
 	module.exports = function() { throw new Error("define cannot be used indirect"); };
+
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	var Alert = function(text) {
+	    this.text = text;
+	};
+	Alert.prototype.say = function(){
+	    console.log(this.text);
+	    alert('alert: ' + this.text);
+	};
+	module.exports = Alert;
+
 
 
 /***/ }
